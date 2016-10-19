@@ -49,24 +49,24 @@ void insertSort(int* arr, int length){
 }
 int partation(int* arr,int low，int high){
 	//随机划分
-	if(data==null||low>high)
+	if(arr==null||low>high)
 		return -1;
 	srand(unsigned(time(0)));
 	int index=low+rand()%(high-low+1);//随机初始化划分项位置
-	int indexData=data[index];//划分标准项
-	swap(data[index],data[high]);//把划分标志项放到最后一个数上存着，
+	int indexData=arr[index];//划分标准项
+	swap(arr[index],arr[high]);//把划分标志项放到最后一个数上存着，
 	//同时与最后一项进行交换
 	int small=low-1;//划分位置标识，初始值为low的前一个，
 	for (int i = low; i < high; ++i){//在给定的low和high区间内进行划分操作
-		if (data[i]<indexData){//当区间内的值小于确定的划分值时，
+		if (arr[i]<indexData){//当区间内的值小于确定的划分值时，
 			small++;//递增small，small的作用是确定循环后与high交换的那个值的位置
 			if(small!=i){//循环时遇到到small和i相同就不交换，说明i的值比index值小
-				swap(data[i],data[small]);
+				swap(arr[i],arr[small]);
 			}
 		}
 	}
 	small++;
-	swap(data[small],data[high]);//交换smll位置的值和存在high的值
+	swap(arr[small],arr[high]);//交换smll位置的值和存在high的值
 	return small;//返回index值所在的位置
 }
 void quickSort(int data[], int low, int high)
@@ -125,7 +125,7 @@ void merge(int data[],int left,int mid,int right){
 		L1[i]=data[left+i];
 	}
 	for (int i = 0; i < n1; ++i){//对L1赋值
-		L2[i]=data[middle+i+1];
+		L2[i]=data[mid+i+1];
 	}
 	int i=0,j=0;
 	int k=left;
