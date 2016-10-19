@@ -124,7 +124,7 @@ void merge(int data[],int left,int mid,int right){
 	for (int i = 0; i < n1; ++i){//对L1赋值
 		L1[i]=data[left+i];
 	}
-	for (int i = 0; i < n1; ++i){//对L1赋值
+	for (int i = 0; i < n2; ++i){//对L1赋值
 		L2[i]=data[mid+i+1];
 	}
 	int i=0,j=0;
